@@ -14,7 +14,7 @@ def hello_world():
     else:
         myage = float(request.form['age'])
         mygender =  float(request.form['gender'])
-        model = load('app/watch-recommender.joblib')
+        model,_ = load('app/watch-recommender.joblib')
         np_arr = np.array([myage, mygender])
         predictions = model.predict([np_arr])  
         predictions_to_str = str(predictions)
